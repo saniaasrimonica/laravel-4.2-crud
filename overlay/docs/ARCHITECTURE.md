@@ -1,0 +1,4 @@
+Architecture
+HTTP request → Sanctum authentication → FormRequest → controller → authorization policy → Eloquent/SQLite → JSON resource.
+The browser is a same-origin API client. It uses textContent for untrusted product data and never persists tokens to localStorage. Products are scoped by authenticated user in list queries, and individual resource operations use a policy. Client-provided user_id is discarded through a validated field allowlist.
+No business transaction spans multiple writes yet; add transactions when introducing stock movement records. Future extensions should add an append-only stock ledger, idempotency for external clients, conflict handling, audit history, and dedicated authentication UX when those features have real requirements. SQLite is a local-demo choice; verify constraints and concurrency on the intended production database.

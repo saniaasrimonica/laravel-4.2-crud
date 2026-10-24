@@ -1,7 +1,0 @@
-vendor
-node_modules
-.git
-.env
-database/*.sqlite
-database/*.sqlite-*
-storage/logs/*
